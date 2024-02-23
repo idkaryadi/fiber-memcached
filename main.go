@@ -25,7 +25,7 @@ var mc = memcache.New("0.0.0.0:11211")
 
 func main() {
 	app := fiber.New()
-
+	fmt.Println("tambah fmt")
 	app.Get("/photo/:id", verifyCache, func(c *fiber.Ctx) error {
 		id := c.Params("id")
 		res, err := http.Get("https://jsonplaceholder.typicode.com/photos/" + id)
